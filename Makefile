@@ -7,7 +7,7 @@ GOBIN = ./build/bin
 
 geth:
 	mkdir -p $(GOBIN)
-	go build -tags blst_portable -o $(GOBIN)/geth ./cmd/primea
+	CGO_ENABLED=0 go build -tags blst_portable -o $(GOBIN)/geth ./cmd/primea
 	@echo "Done building."
 	@echo "Run \"$(GOBIN)/geth\" to launch Primea node."
 
